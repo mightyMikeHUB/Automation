@@ -14,9 +14,6 @@
         <parameter name="browser"  value="chrome"/>
         <classes>
             <class name="com.dice.LoginTest">
-                <methods>
-                    <exclude name="negativeLogInTest"/>
-                </methods>
             </class>
         </classes>
     </test>
