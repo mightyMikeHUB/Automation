@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FirstTestSuite" parallel="tests" thread-count="2">
+
+    <test name="LoginTest-FF">
+        <parameter name="browser"  value="firefox"/>
+        <classes>
+            <class name="com.dice.LoginTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="LoginTest-Chrome">
+        <parameter name="browser"  value="chrome"/>
+        <classes>
+            <class name="com.dice.LoginTest">
+                <methods>
+                    <exclude name="negativeLogInTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
