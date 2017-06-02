@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1, groups = {"positive"})
     public void positiveLogInTest() {
         LogInPage loginPage = new LogInPage(driver);
         String expectedPageTitle = "Seeker Dashboard - Profile";
@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
         assertTrue(profilePage.isCorrectProfileLoaded(correctProfileName), "Profile name is not expected.");
     }
 
-    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
+    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class, priority = 2, groups = {"negative"})
     public void negativeLogInTest(Map<String, String> testData) {
         String expectedErrorMessage = "Email and/or password incorrect.";
         String testNumber = testData.get("no");

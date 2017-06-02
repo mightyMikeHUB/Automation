@@ -4,6 +4,11 @@
 
     <test name="LoginTest-FF">
         <parameter name="browser"  value="firefox"/>
+        <groups>
+            <run>
+                <exclude name="broken"></exclude>
+            </run>
+        </groups>
         <classes>
             <class name="com.dice.LoginTest">
             </class>
@@ -12,6 +17,11 @@
 
     <test name="LoginTest-Chrome">
         <parameter name="browser"  value="chrome"/>
+        <groups>
+            <run>
+                <exclude name="broken"></exclude>
+            </run>
+        </groups>
         <classes>
             <class name="com.dice.LoginTest">
             </class>
